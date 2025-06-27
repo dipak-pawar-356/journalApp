@@ -1,19 +1,31 @@
 package net.engineeringdigest.journalApp.service;
-
-
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.SimpleMailMessage;
 
-@SpringBootTest
+import static org.mockito.Mockito.*;
+
+@ExtendWith(MockitoExtension.class)
 public class EmailServiceTests {
 
-    @Autowired
+    @InjectMocks
     private EmailService emailService;
 
-    @Test
-    public void senEmailTest(){
-        emailService.sendEmail("psaikumariiitkottayam@gmail.com","Hello , This is sai from another email"," hello sai, this is sai kumar from USA");
-    }
+    @Mock
+    private JavaMailSender javaMailSender;
 
+    @Test
+    public void sendEmailTest() {
+        emailService.sendEmail(
+                "dipakpawaras356@gmail.com",
+                "Test Subject",
+                "Test Body"
+        );
+
+        verify(javaMailSender, times(1)).send(any(SimpleMailMessage.class));
+    }
 }

@@ -30,7 +30,11 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=the-engineering-hub_journalapp
+        # You can also use: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ...
+        run: ./mvnw clean install -DskipTests=true sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+    
+
