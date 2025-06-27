@@ -35,6 +35,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         # You can also use: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ...
-        run: ./mvn clean install -D skipTests=true sonar:sonar -D sonar.login=${{ secrets.SONAR_TOKEN }}
+        run: ./mvnw -B verify -DskipTests=true sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }}
     
 
