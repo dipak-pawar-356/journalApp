@@ -18,6 +18,7 @@ public class EmailServiceTests {
     @Mock
     private JavaMailSender javaMailSender;
 
+
     @Test
     public void sendEmailTest() {
         emailService.sendEmail(

@@ -7,11 +7,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.MongoTransactionManager;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "net.engineeringdigest.journalApp")
+
 @EnableTransactionManagement
+@EnableScheduling
 public class JournalAppApplication {
 
 	public static void main(String[] args) {
@@ -25,5 +29,11 @@ public class JournalAppApplication {
 	public PlatformTransactionManager add(MongoDatabaseFactory dbFactory ){
 		return new MongoTransactionManager(dbFactory);
 	}
+
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
+	}
+
 
 }

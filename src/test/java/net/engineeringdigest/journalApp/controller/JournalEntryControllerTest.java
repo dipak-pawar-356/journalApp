@@ -1,4 +1,4 @@
-package net.engineeringdigest.journalApp;
+package net.engineeringdigest.journalApp.controller;
 
 import net.engineeringdigest.journalApp.entity.User;
 import net.engineeringdigest.journalApp.repository.UserRepository;
@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Collections;
@@ -28,24 +27,24 @@ public class JournalEntryControllerTest {
     @Autowired
     private UserRepository userRepository;
 
-//    @BeforeEach
-//    void setUp() {
-//        userRepository.deleteAll();
-//
-//        // Create a test user WITHOUT any journal entries
-//        User user = new User();
-//        user.setId(new ObjectId());
-//        user.setUserName("testuser");
-//        user.setPassword("password");
-//        user.setJournalEntries(Collections.emptyList());  // 🚫 No journal entries
-//
-//        userRepository.save(user);
-//    }
+    @BeforeEach
+    void setUp() {
+        userRepository.deleteAll();
 
-//    @Test
-////    @WithMockUser(username = "testuser")
-//    public void testGetAll_whenNoEntries_then404() throws Exception {
-//        mockMvc.perform(get("/journals"))
-//                .andExpect(status().isNotFound());  // ✅ Expect 404 since no journal entries exist
-//    }
+        // Create a test user WITHOUT any journal entries
+        User user = new User();
+        user.setId(new ObjectId());
+        user.setUserName("testuser");
+        user.setPassword("password");
+        user.setJournalEntries(Collections.emptyList());  // 🚫 No journal entries
+
+        userRepository.save(user);
+    }
+
+    @Test
+    @WithMockUser(username = "testuser")
+    public void testGetAll_whenNoEntries_then404() throws Exception {
+        mockMvc.perform(get("/journals"))
+                .andExpect(status().isNotFound());  // ✅ Expect 404 since no journal entries exist
+    }
 }
