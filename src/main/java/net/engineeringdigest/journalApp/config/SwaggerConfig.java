@@ -22,11 +22,11 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(
                         new Info().title("Journal App APIs")
-                                .description("By Vipul")
+                                .description("By Dipak")
                 )
-                .servers(Arrays.asList(new Server().url("http://localhost:8081").description("local"),
+                .servers(List.of(new Server().url("http://localhost:8081").description("local"),
                         new Server().url("http://localhost:8082").description("live")))
-                .tags(Arrays.asList(
+                .tags(List.of(
                         new Tag().name("Public APIs"),
                         new Tag().name("User APIs"),
                         new Tag().name("Journal APIs"),
