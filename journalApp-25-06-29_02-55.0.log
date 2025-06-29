@@ -1,0 +1,196 @@
+02:55:33.643 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:33.662 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:33.665 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Received: 0 records
+02:55:33.666 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:33.691 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.replace(java.lang.CharSequence, java.lang.CharSequence)" because the return value of "java.util.Map.get(Object)" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "String.replace(java.lang.CharSequence, java.lang.CharSequence)" because the return value of "java.util.Map.get(Object)" is null
+	at net.engineeringdigest.journalApp.service.WeatherService.getWeather(WeatherService.java:33)
+	at net.engineeringdigest.journalApp.controller.UserController.greeting(UserController.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at net.engineeringdigest.journalApp.filter.JwtFilter.doFilterInternal(JwtFilter.java:43)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+02:55:33.713 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy -Securing GET /error
+02:55:33.713 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy -Secured GET /error
+02:55:33.775 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:33.794 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer -weekly-sentiment-group: Consumer stopped
+02:55:33.798 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -KafkaMessageListenerContainer [id=org.springframework.kafka.KafkaListenerEndpointContainer#0-0, clientIndex=-0, topicPartitions=[]] stopped normally
+02:55:33.800 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -Commencing graceful shutdown. Waiting for active requests to complete
+02:55:34.026 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -Graceful shutdown complete
+02:55:36.440 [background-preinit] INFO  o.h.validator.internal.util.Version -HV000001: Hibernate Validator 8.0.2.Final
+02:55:36.497 [main] INFO  n.e.journalApp.JournalAppApplication -Starting JournalAppApplication using Java 17.0.12 with PID 25652 (C:\Users\dipak\Downloads\journalApp\journalApp\target\classes started by dipak in C:\Users\dipak\Downloads\journalApp)
+02:55:36.498 [main] INFO  n.e.journalApp.JournalAppApplication -The following 1 profile is active: "dev"
+02:55:37.588 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode
+02:55:37.590 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+02:55:37.748 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 150 ms. Found 3 MongoDB repository interfaces.
+02:55:37.767 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode
+02:55:37.768 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+02:55:37.789 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport -Spring Data Redis - Could not safely identify store assignment for repository candidate interface net.engineeringdigest.journalApp.repository.ConfigJournalAppRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+02:55:37.789 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport -Spring Data Redis - Could not safely identify store assignment for repository candidate interface net.engineeringdigest.journalApp.repository.JournalEntryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+02:55:37.790 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport -Spring Data Redis - Could not safely identify store assignment for repository candidate interface net.engineeringdigest.journalApp.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+02:55:37.790 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+02:55:38.609 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port 8080 (http)
+02:55:38.624 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8080"]
+02:55:38.626 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+02:55:38.626 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/10.1.40]
+02:55:38.726 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+02:55:38.726 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2166 ms
+02:55:39.090 [main] INFO  org.mongodb.driver.client -MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=majority, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='dipakpawaras19', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@3407aa4f, com.mongodb.Jep395RecordCodecProvider@51ed2f68, com.mongodb.KotlinCodecProvider@538b3c88]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.lkxuif7.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-sjh4g7-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+02:55:39.371 [main] INFO  org.mongodb.driver.cluster -Waiting for server to become available for operation with ID 2. Remaining time: 29987 ms. Selector: WritableServerSelector, topology description: {type=UNKNOWN, servers=[].
+02:55:39.624 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-srv-cluster0.lkxuif7.mongodb.net] INFO  org.mongodb.driver.cluster -Adding discovered server ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017 to client view of cluster
+02:55:39.648 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-srv-cluster0.lkxuif7.mongodb.net] INFO  org.mongodb.driver.cluster -Adding discovered server ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017 to client view of cluster
+02:55:39.651 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-srv-cluster0.lkxuif7.mongodb.net] INFO  org.mongodb.driver.cluster -Adding discovered server ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017 to client view of cluster
+02:55:40.345 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017] INFO  org.mongodb.driver.cluster -Monitor thread successfully connected to server with description ServerDescription{address=ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=345377400, minRoundTripTimeNanos=0, setName='atlas-sjh4g7-shard-0', canonicalAddress=ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017, hosts=[ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017], passives=[], arbiters=[], primary='ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=685bcc146eebc070986fea3a, counter=3}, lastWriteDate=Sun Jun 29 02:55:41 IST 2025, lastUpdateTimeNanos=42912403847100}
+02:55:40.345 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017] INFO  org.mongodb.driver.cluster -Monitor thread successfully connected to server with description ServerDescription{address=ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=345419800, minRoundTripTimeNanos=0, setName='atlas-sjh4g7-shard-0', canonicalAddress=ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017, hosts=[ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017], passives=[], arbiters=[], primary='ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=685bc6a3b67116055bb58d33, counter=4}, lastWriteDate=Sun Jun 29 02:55:41 IST 2025, lastUpdateTimeNanos=42912403956000}
+02:55:40.345 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017] INFO  org.mongodb.driver.cluster -Monitor thread successfully connected to server with description ServerDescription{address=ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=346167300, minRoundTripTimeNanos=0, setName='atlas-sjh4g7-shard-0', canonicalAddress=ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017, hosts=[ac-szlqsfw-shard-00-00.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-01.lkxuif7.mongodb.net:27017, ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017], passives=[], arbiters=[], primary='ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000027, setVersion=7, topologyVersion=TopologyVersion{processId=685bc5e946ecc7e35e0cfaae, counter=7}, lastWriteDate=Sun Jun 29 02:55:41 IST 2025, lastUpdateTimeNanos=42912404604500}
+02:55:40.351 [cluster-ClusterId{value='68605dd346e2684704eae605', description='null'}-ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017] INFO  org.mongodb.driver.cluster -Discovered replica set primary ac-szlqsfw-shard-00-02.lkxuif7.mongodb.net:27017 with max election id 7fffffff0000000000000027 and max set version 7
+02:55:41.571 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer -Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+02:55:41.571 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer -Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+02:55:42.828 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain -Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+02:55:43.524 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8080"]
+02:55:43.571 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port 8080 (http) with context path '/'
+02:55:43.924 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:43.936 [main] INFO  n.e.journalApp.JournalAppApplication -Started JournalAppApplication in 7.9 seconds (process running for 8.607)
+02:55:44.175 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:44.176 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:44.265 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:44.267 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:44.423 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:44.425 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:44.686 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:44.686 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:45.111 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:45.112 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:45.858 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:45.858 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:46.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:46.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:47.915 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:47.915 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:48.893 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:48.894 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:48.944 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Received: 0 records
+02:55:48.945 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:49.936 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:49.936 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:50.857 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:50.858 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:51.868 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:51.868 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:52.881 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:52.882 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:53.882 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:53.882 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:53.955 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Received: 0 records
+02:55:53.956 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:54.893 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:54.894 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:55.813 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:55.813 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:56.772 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:56.773 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:57.704 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:57.705 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:58.718 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:58.719 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+02:55:58.965 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Received: 0 records
+02:55:58.965 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] DEBUG o.s.k.l.KafkaMessageListenerContainer -Commit list: {}
+02:55:59.732 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+02:55:59.733 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-weekly-sentiment-group-1, groupId=weekly-sentiment-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
