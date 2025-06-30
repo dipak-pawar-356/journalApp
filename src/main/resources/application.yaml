@@ -13,8 +13,8 @@ spring:
     redis:
       host: redis-17260.c305.ap-south-1-1.ec2.redns.redis-cloud.com:17260
       port: 15641
-      username: default
-      password: H2XEJWVHNRXMxCJfCxTeL8U64TFZ70F2
+      username: ${REDIS_USERNAME}
+      password: ${REDIS_PASSWORD}
       ssl:
         enabled: true
     mongodb:
@@ -49,28 +49,28 @@ spring:
               - email
 
 
-  kafka:
-    bootstrap-servers: ${KAFKA_SERVERS}
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    consumer:
-      group-id: weekly-sentiment-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: net.engineeringdigest.journalApp.model
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS:dummy:9092}
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  consumer:
+    group-id: weekly-sentiment-group
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
     properties:
-      security:
-        protocol: SASL_SSL
-      sasl:
-        mechanism: PLAIN
-        jaas:
-          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='X' password='X';
-      session:
+      spring:
+        json:
+          trusted:
+            packages: net.engineeringdigest.journalApp.model
+  properties:
+    security:
+      protocol: SASL_SSL
+    sasl:
+      mechanism: PLAIN
+      jaas:
+        config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${KAFKA_USERNAME:dummy}' password='${KAFKA_PASSWORD:dummy123}';
+    session:
         timeout:
           ms: 45000
 
