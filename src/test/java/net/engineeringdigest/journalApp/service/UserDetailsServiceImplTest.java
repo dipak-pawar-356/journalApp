@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.*;
 //import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ import static org.mockito.Mockito.*;
 
 
 
-
+@ActiveProfiles("test")
 public class UserDetailsServiceImplTest {
 
     @InjectMocks

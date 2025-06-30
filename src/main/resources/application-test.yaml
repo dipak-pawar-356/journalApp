@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      database: testdb
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+
+services:
+  mongo:
+    image: mongo:4.4
+    ports:
+      - 27017:27017
