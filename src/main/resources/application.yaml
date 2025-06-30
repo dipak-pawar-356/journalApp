@@ -1,40 +1,6 @@
-server:
-  port: 8081
-  servlet:
-    context-path: /
-
 spring:
   profiles:
     active: dev
-
-
-
-  data:
-    redis:
-      host: redis-17260.c305.ap-south-1-1.ec2.redns.redis-cloud.com:17260
-      port: 15641
-      username: ${REDIS_USERNAME}
-      password: ${REDIS_PASSWORD}
-      ssl:
-        enabled: true
-    mongodb:
-      uri: ${MONGODB_URI}
-      database: journaldb
-      auto-index-creation: true
-
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${JAVA_EMAIL}
-    password: ${JAVA_EMAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-        debug: true
-
   security:
     oauth2:
       client:
@@ -47,32 +13,73 @@ spring:
               - openid
               - profile
               - email
-
-
-kafka:
-  bootstrap-servers: ${KAFKA_SERVERS:dummy:9092}
-  producer:
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-  consumer:
-    group-id: weekly-sentiment-group
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  main:
+    allow-circular-reference: true
+  server:
+    port: 8081
+    servlet:
+      context-path: /
+  redis:
+    data:
+      host: ${REDIS_HOST}
+      port: 15641
+      username: ${REDIS_USERNAME}
+      password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: true
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: journaldb
+      auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${JAVA_EMAIL}
+    password: ${JAVA_EMAIL_PASSWORD}
     properties:
-      spring:
-        json:
-          trusted:
-            packages: net.engineeringdigest.journalApp.model
-  properties:
-    security:
-      protocol: SASL_SSL
-    sasl:
-      mechanism: PLAIN
-      jaas:
-        config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${KAFKA_USERNAME:dummy}' password='${KAFKA_PASSWORD:dummy123}';
-    session:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVERS:dummy:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: weekly-sentiment-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: net.engineeringdigest.journalApp.model
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${KAFKA_USERNAME:dummy}' password='${KAFKA_PASSWORD:dummy123}';
+      session:
         timeout:
           ms: 45000
+  logging:
+    level:
+      root: info
+      org.springframework: info
+      org.springframework.boot.autoconfigure: warn
+      org.springframework.kafka: warn
+      org.apache.kafka: warn
+      org.springframework.kafka.listener.KafkaMessageListenerContainer: DEBUG
+weather:
+  api:
+    key: ${WEATHER_API_KEY}
+
+
 
 #  kafka:
 #    bootstrap-servers: dummy:9092
@@ -83,15 +90,6 @@ kafka:
 #  oauth2:
 #    redirect-uri: https://developers.google.com/oauthplayground
 
-logging:
-  level:
-    root: info
-    org.springframework: info
-    org.springframework.boot.autoconfigure: warn
-    org.springframework.kafka: warn
-    org.apache.kafka: warn
-    org.springframework.kafka.listener.KafkaMessageListenerContainer: DEBUG
 
-weather:
-  api:
-    key: ${WEATHER_API_KEY}
+
+
